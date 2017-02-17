@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Articles</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="/articles" method="POST">
+      <input type="text" name="title" />
+      <input type="text" name="content" />
+      <input type="submit" value="新增" />
+    </form>
+    <ul>
+      <% for(var i=0; i<articles.length; i++) {%>
+      <li><%= articles[i].get('title') %> <%= articles[i].get('content') %> </li>
+      <% } %>
+    </ul>
+  </body>
+</html>
